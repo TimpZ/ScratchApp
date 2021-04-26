@@ -9,7 +9,15 @@ inline int32 FloorFloat32ToInt32(float32 Float32)
 
 inline int32 RoundFloat32ToInt32(float32 Float32)
 {
-	uint32 Result = (int32)roundf(Float32);
+	int32 Result = (int32)roundf(Float32);
+	return Result;
+}
+
+inline uint32 RoundFloat32ToUInt32(float32 Float32)
+{
+	int32 Int32 = RoundFloat32ToInt32(Float32);
+	Assert(Int32 >= 0);
+	uint32 Result = (uint32)Int32;
 	return Result;
 }
 
